@@ -1,13 +1,12 @@
+<h1>Hello, {{ title }}</h1>
+
 <h2>App Component</h2>
 
-{{title}}
+<pre>
+    <!-- Name: <input type="test" name="name" [(ngModel)]="name"> -->
+    Name: <input type="text" [(ngModel)]="name">
 
-<br><br>
-<!-- Name: <input type="test" name="name" [(ngModel)]="name"> -->
-Name: <input type="text" [(ngModel)]="name">
+    {{name}}
 
-<br><br>
-{{name}}
-
-<br><br>
-<button (click)="test()">Submit</button>
+    <button (click)="test()">Submit</button>
+</pre>

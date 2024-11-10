@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 export class AppComponent {
   title = 'first-angular-app';
-  name: string = 'ujjwal';
+  name!: string;
 
   test(): void {
     // alert(this.name);
