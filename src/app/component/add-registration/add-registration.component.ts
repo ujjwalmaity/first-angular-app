@@ -11,7 +11,6 @@ import { Registration } from '../../model/registration';
   templateUrl: './add-registration.component.html',
   styleUrl: './add-registration.component.css'
 })
-
 export class AddRegistrationComponent implements OnInit {
   myForm!: FormGroup;
 

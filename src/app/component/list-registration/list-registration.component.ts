@@ -11,7 +11,6 @@ import { RegistrationService } from '../../service/registration.service';
   templateUrl: './list-registration.component.html',
   styleUrl: './list-registration.component.css'
 })
-
 export class ListRegistrationComponent implements OnInit {
   registrations!: Registration[];
 
