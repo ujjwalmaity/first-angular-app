@@ -15,6 +15,7 @@ export class ListRegistrationComponent implements OnInit {
   registrations!: Registration[];
 
   ngOnInit(): void {
+    console.log('ListRegistrationComponent - ngOnInit');
     this.registrations = [
       {
         firstName: "John",
