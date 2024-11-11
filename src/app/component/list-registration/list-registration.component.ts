@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { Registration } from '../../model/registration';
 import { NgFor } from '@angular/common';
+import { RegistrationService } from '../../service/registration.service';
 
 @Component({
   selector: 'app-list-registration',
@@ -14,28 +15,12 @@ import { NgFor } from '@angular/common';
 export class ListRegistrationComponent implements OnInit {
   registrations!: Registration[];
 
+  constructor(private registrationService: RegistrationService) { }
+
   ngOnInit(): void {
     console.log('ListRegistrationComponent - ngOnInit');
-    this.registrations = [
-      {
-        firstName: "John",
-        lastName: "Doe",
-        email: "johndoe@example.com",
-        mobile: 1234567890
-      },
-      {
-        firstName: "Jane",
-        lastName: "Smith",
-        email: "janesmith@example.com",
-        mobile: 9876543210
-      },
-      {
-        firstName: "Alice",
-        lastName: "Johnson",
-        email: "alicejohnson@example.com",
-        mobile: 1122334455
-      }
-    ];
+
+    this.registrations = this.registrationService.getRegistrationList();
   }
 
 }

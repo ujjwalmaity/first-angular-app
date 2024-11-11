@@ -21,6 +21,7 @@ export class AddRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('AddRegistrationComponent - ngOnInit');
+
     this.myForm = this.fb.group({
       firstName: '',
       lastName: '',
@@ -30,6 +31,7 @@ export class AddRegistrationComponent implements OnInit {
   }
 
   onSubmit() {
+    // debugger;
     this.registration = this.myForm.value;
     console.log(this.registration);
     this.router.navigateByUrl('/list-registration');
