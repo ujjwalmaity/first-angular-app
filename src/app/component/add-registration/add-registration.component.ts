@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-registration',
@@ -13,7 +14,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class AddRegistrationComponent implements OnInit {
   myForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -26,6 +27,7 @@ export class AddRegistrationComponent implements OnInit {
 
   onSubmit() {
     console.log(this.myForm.value);
+    this.router.navigateByUrl('/list-registration');
   }
 
 }
