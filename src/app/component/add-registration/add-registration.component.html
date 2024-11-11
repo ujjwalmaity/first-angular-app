@@ -1,3 +1,13 @@
 <app-nav-bar></app-nav-bar>
 
 <p>add-registration works!</p>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <pre>
+        First Name: <input type="text" formControlName="firstName">
+        Last Name: <input type="text" formControlName="lastName">
+        Email: <input type="text" formControlName="email">
+        Mobile: <input type="number" formControlName="mobile">
+        <button type="submit">Submit</button>
+    </pre>
+</form>
