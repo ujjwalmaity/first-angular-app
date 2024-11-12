@@ -1,18 +1,27 @@
 <app-nav-bar></app-nav-bar>
 
-<p>list-registration works!</p>
-
-<table>
-    <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Mobile</th>
-    </tr>
-    <tr *ngFor="let registration of registrations">
-        <td>{{registration.firstName}}</td>
-        <td>{{registration.lastName}}</td>
-        <td>{{registration.email}}</td>
-        <td>{{registration.mobile}}</td>
-    </tr>
-</table>
+<div class="card text-center mx-auto mt-4" style="width: 40rem;">
+    <div class="card-header">
+        List Registration
+    </div>
+    <div class="card-body">
+        <table class="table table-striped text-start">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let registration of registrations">
+                    <td>{{registration.firstName}}</td>
+                    <td>{{registration.lastName}}</td>
+                    <td>{{registration.email}}</td>
+                    <td>{{registration.mobile}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
