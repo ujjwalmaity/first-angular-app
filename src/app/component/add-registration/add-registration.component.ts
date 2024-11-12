@@ -25,7 +25,7 @@ export class AddRegistrationComponent implements OnInit {
       firstName: '',
       lastName: '',
       email: '',
-      mobile: 0,
+      mobile: null,
     });
   }
 

@@ -1,13 +1,30 @@
 <app-nav-bar></app-nav-bar>
 
-<p>add-registration works!</p>
-
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <pre>
-        First Name: <input type="text" formControlName="firstName">
-        Last Name: <input type="text" formControlName="lastName">
-        Email: <input type="text" formControlName="email">
-        Mobile: <input type="number" formControlName="mobile">
-        <button type="submit">Submit</button>
-    </pre>
-</form>
+<div class="card text-center mx-auto mt-4" style="width: 30rem;">
+    <div class="card-header">
+        Add Registration
+    </div>
+    <div class="card-body text-start">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="mb-2">
+                <label class="form-label">First Name</label>
+                <input class="form-control" type="text" formControlName="firstName">
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Last Name</label>
+                <input class="form-control" type="text" formControlName="lastName">
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" formControlName="email">
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Mobile</label>
+                <input class="form-control" type="number" formControlName="mobile">
+            </div>
+            <div class="d-grid mt-3">
+                <button class="btn btn-primary btn-md" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
