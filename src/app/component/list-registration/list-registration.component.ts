@@ -19,7 +19,7 @@ export class ListRegistrationComponent implements OnInit {
   ngOnInit(): void {
     console.log('ListRegistrationComponent - ngOnInit');
 
-    this.registrations = this.registrationService.getRegistrationList();
+    this.registrations = this.registrationService.registrations;
   }
 
 }

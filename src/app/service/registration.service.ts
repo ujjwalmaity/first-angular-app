@@ -7,11 +7,17 @@ import { delay, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistrationService {
+  registrations!: Registration[];
 
   // constructor(private http: HttpClient) { }
+  constructor() {
+    console.log('RegistrationService - constructor');
 
-  public getRegistrationList(): Registration[] {
-    return [
+    this.getRegistrationList();
+  }
+
+  private getRegistrationList(): void {
+    this.registrations = [
       {
         "firstName": "John",
         "lastName": "Doe",
