@@ -33,7 +33,19 @@ export class AddRegistrationComponent implements OnInit {
     // debugger;
     this.registration = this.myForm.value;
     console.log(this.registration);
-    this.router.navigateByUrl('/list-registration');
+
+    if (this.registration.firstName.length == 0 ||
+      this.registration.lastName.length == 0 ||
+      this.registration.email.length == 0 ||
+      this.registration.mobile == null ||
+      this.registration.mobile.toString.length == 0
+    ) {
+      console.warn('Invalid input');
+      return;
+    }
+
+    // this.router.navigateByUrl('/list-registration');
+    this.router.navigate(['/list-registration'], { state: { newRegistration: this.registration } });
   }
 
 }
