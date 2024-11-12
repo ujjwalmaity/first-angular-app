@@ -6,8 +6,18 @@
 </div>
 -->
 
-@for (movie of movieService.popularMovies; track movie){
-<p>{{movie.original_title}}</p>
-}@empty {
-<p>No data</p>
-}
+<div class="row row-cols-1 row-cols-xs-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-4 mx-2">
+    @for (movie of movieService.popularMovies; track movie){
+    <div class="col mb-4">
+        <!-- <div class="card" style="width: 15rem; margin: 0 auto;"> -->
+        <div class="card">
+            <img class="rounded-top" src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"
+                [alt]="movie.original_title">
+            <div class="ms-1 mt-1 fs-6 fw-light">{{movie.original_title}}</div>
+            <div class="ms-1 mb-1 fw-lighter" style="font-size: 0.8rem;">{{movie.vote_average}}</div>
+        </div>
+    </div>
+    }@empty {
+    <p>No data</p>
+    }
+</div>
