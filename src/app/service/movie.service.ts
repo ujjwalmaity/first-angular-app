@@ -11,7 +11,9 @@ export class MovieService {
   private apiKey: string = '024d69b581633d457ac58359146c43f6';
   private language: string = 'en-US';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    console.log('MovieService - constructor');
+  }
 
   public getPopularMovie$(page: number = 1): Observable<Movie[]> {
     const params: HttpParams = this.buildParams({ page: page.toString() });

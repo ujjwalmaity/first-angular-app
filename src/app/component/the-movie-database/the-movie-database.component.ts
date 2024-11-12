@@ -15,6 +15,8 @@ export class TheMovieDatabaseComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    console.log('TheMovieDatabaseComponent - ngOnInit');
+
     this.movieService.getPopularMovie$().subscribe(
       (movies: Movie[]) => {
         // TODO
