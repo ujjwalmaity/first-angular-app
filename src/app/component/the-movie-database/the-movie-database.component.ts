@@ -17,11 +17,13 @@ export class TheMovieDatabaseComponent implements OnInit {
   ngOnInit(): void {
     console.log('TheMovieDatabaseComponent - ngOnInit');
 
-    this.movieService.getPopularMovie$().subscribe(
-      (movies: Movie[]) => {
-        // TODO
-      }
-    );
+    if (this.movieService.popularMovies == null) {
+      this.movieService.getPopularMovie$().subscribe(
+        (movies: Movie[]) => {
+          this.movieService.popularMovies = movies;
+        }
+      );
+    }
   }
 
 }

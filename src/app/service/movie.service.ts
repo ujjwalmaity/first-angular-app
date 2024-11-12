@@ -11,6 +11,8 @@ export class MovieService {
   private apiKey: string = '024d69b581633d457ac58359146c43f6';
   private language: string = 'en-US';
 
+  popularMovies?: Movie[];
+
   constructor(private http: HttpClient) {
     console.log('MovieService - constructor');
   }
