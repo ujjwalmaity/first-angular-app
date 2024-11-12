@@ -1,3 +1,13 @@
 <app-nav-bar></app-nav-bar>
 
-<p>the-movie-database works!</p>
+<!--
+<div *ngFor="let movi of movieService.popularMovies">
+    <p>{{movi.title}}</p>
+</div>
+-->
+
+@for (movie of movieService.popularMovies; track movie){
+<p>{{movie.original_title}}</p>
+}@empty {
+<p>No data</p>
+}

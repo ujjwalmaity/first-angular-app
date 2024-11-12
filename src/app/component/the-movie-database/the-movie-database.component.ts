@@ -12,7 +12,7 @@ import { Movie } from '../../model/movie';
 })
 export class TheMovieDatabaseComponent implements OnInit {
 
-  constructor(private movieService: MovieService) { }
+  constructor(public movieService: MovieService) { }
 
   ngOnInit(): void {
     console.log('TheMovieDatabaseComponent - ngOnInit');

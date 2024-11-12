@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Movie } from '../model/movie';
 
 @Injectable({
@@ -19,8 +19,9 @@ export class MovieService {
 
   public getPopularMovie$(page: number = 1): Observable<Movie[]> {
     const params: HttpParams = this.buildParams({ page: page.toString() });
-    return this.http.get<Movie[]>(`${this.apiUrl}/movie/popular`, { params })
-      .pipe(catchError(this.handleError));;
+    return this.http.get<any>(`${this.apiUrl}/movie/popular`, { params })
+      .pipe<Movie[]>(map(data => data['results']))
+      .pipe(catchError(this.handleError));
   }
 
   private buildParams(params: any): HttpParams {
