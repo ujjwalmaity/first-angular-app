@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './list-registration.component.css'
 })
 export class ListRegistrationComponent implements OnInit {
-  registrations!: Registration[];
+  registrations?: Registration[];
 
   constructor(private router: Router, private registrationService: RegistrationService) {
     // console.log('ListRegistrationComponent - constructor');
@@ -21,14 +21,23 @@ export class ListRegistrationComponent implements OnInit {
     let newRegistration: Registration = this.router.getCurrentNavigation()?.extras.state?.['newRegistration'];
     // console.log(newRegistration);
     if (newRegistration != undefined) {
-      this.registrationService.registrations.push(newRegistration);
+      this.registrationService.registrations?.push(newRegistration);
     }
   }
 
   ngOnInit(): void {
     console.log('ListRegistrationComponent - ngOnInit');
 
-    this.registrations = this.registrationService.registrations;
+    if (this.registrationService.registrations == null) {
+      this.registrationService.getRegistrationList$().subscribe(
+        (data: Registration[]) => {
+          this.registrationService.registrations = data;
+          this.registrations = this.registrationService.registrations;
+        }
+      );
+    } else {
+      this.registrations = this.registrationService.registrations;
+    }
   }
 
 }

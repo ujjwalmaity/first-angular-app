@@ -7,40 +7,15 @@ import { delay, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistrationService {
-  registrations!: Registration[];
+  registrations?: Registration[];
 
-  // constructor(private http: HttpClient) { }
-  constructor() {
+  constructor(private http: HttpClient) {
     console.log('RegistrationService - constructor');
-
-    this.getRegistrationList();
   }
 
-  private getRegistrationList(): void {
-    this.registrations = [
-      {
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "johndoe@example.com",
-        "mobile": 1234567890
-      },
-      {
-        "firstName": "Jane",
-        "lastName": "Smith",
-        "email": "janesmith@example.com",
-        "mobile": 9876543210
-      },
-      {
-        "firstName": "Alice",
-        "lastName": "Johnson",
-        "email": "alicejohnson@example.com",
-        "mobile": 1122334455
-      }
-    ];
+  public getRegistrationList$(): Observable<Registration[]> {
+    return this.http.get<Registration[]>('registration.json');
+    // return this.http.get<Registration[]>('registration.json').pipe(delay(1000));
   }
-
-  // public getRegistrationList$(): Observable<Registration[]> {
-  //   return this.http.get<Registration[]>('/assets/mocks/registration.json').pipe(delay(1000));
-  // }
 
 }
