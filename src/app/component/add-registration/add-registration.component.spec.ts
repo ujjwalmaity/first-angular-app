@@ -6,7 +6,7 @@ import { FormBuilder } from '@angular/forms';
 import { routes } from '../../app.routes';
 import { Registration } from '../../model/registration';
 
-fdescribe('AddRegistrationComponent', () => {
+describe('AddRegistrationComponent', () => {
   let fixture: ComponentFixture<AddRegistrationComponent>;
   let component: AddRegistrationComponent;
 
