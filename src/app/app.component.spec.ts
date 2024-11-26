@@ -22,6 +22,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('first-angular-app');
   });
 
+  // Sample code to test ui
   xit('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
