@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Registration } from '../model/registration';
-import { delay, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { delay, Observable } from 'rxjs';
 export class RegistrationService {
   registrations?: Registration[];
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     console.log('RegistrationService - constructor');
   }
 

@@ -16,7 +16,7 @@ export class AddRegistrationComponent implements OnInit {
 
   registration!: Registration;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private readonly fb: FormBuilder, private readonly router: Router) { }
 
   ngOnInit(): void {
     console.log('AddRegistrationComponent - ngOnInit');

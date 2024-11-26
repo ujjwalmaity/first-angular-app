@@ -7,13 +7,13 @@ import { Movie } from '../model/movie';
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl: string = 'https://api.themoviedb.org/3';
-  private apiKey: string = '024d69b581633d457ac58359146c43f6';
-  private language: string = 'en-US';
+  private readonly apiUrl: string = 'https://api.themoviedb.org/3';
+  private readonly apiKey: string = '024d69b581633d457ac58359146c43f6';
+  private readonly language: string = 'en-US';
 
   popularMovies?: Movie[];
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     console.log('MovieService - constructor');
   }
 

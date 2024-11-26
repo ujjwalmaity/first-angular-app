@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class ListRegistrationComponent implements OnInit {
   registrations?: Registration[];
 
-  constructor(private router: Router, private registrationService: RegistrationService) {
+  constructor(private readonly router: Router, private readonly registrationService: RegistrationService) {
     // console.log('ListRegistrationComponent - constructor');
 
     let newRegistration: Registration = this.router.getCurrentNavigation()?.extras.state?.['newRegistration'];
